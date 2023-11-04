@@ -20,13 +20,14 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Ut Lorem anim ut aute labore consequat do elit qui elit minim anim. Dolore exercitation consectetur adipisicing ex occaecat magna. Fugiat esse in amet."
-						}
+							"text": "Ut Lorem anim ut aute labore consequat do elit qui elit minim.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118",
@@ -44,6 +45,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},

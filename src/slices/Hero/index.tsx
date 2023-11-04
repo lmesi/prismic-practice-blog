@@ -19,7 +19,14 @@ const components: JSXMapSerializer = {
       {children}
     </Heading>
   ),
-  paragraph: ({ children }) => <p className="">{children}</p>,
+  paragraph: ({ children }) => (
+    <p
+      className={`text-2xl font-normal leading-10 font-body \
+                text-slate-600 mb-4 md:mb-8 max-w-2xl`}
+    >
+      {children}
+    </p>
+  ),
 };
 
 /**
@@ -36,15 +43,17 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div>
-        <PrismicRichText
-          field={slice.primary.heading}
-          components={components}
-        />
-        <PrismicRichText
-          field={slice.primary.description}
-          components={components}
-        />
+      <div className="grid grid-cols-1 place-items-center">
+        <div className="flex flex-col sm:flex-row justify-between w-full mb-16 items-center">
+          <PrismicRichText
+            field={slice.primary.heading}
+            components={components}
+          />
+          <PrismicRichText
+            field={slice.primary.description}
+            components={components}
+          />
+        </div>
         <PrismicNextImage
           field={slice.primary.image}
           className="drop-shadow-xl max-w-4xl w-full"
