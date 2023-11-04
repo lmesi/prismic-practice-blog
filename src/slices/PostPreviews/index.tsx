@@ -47,7 +47,7 @@ const PostPreviews = ({ slice }: PostPreviewsProps): JSX.Element => {
               field={item.image}
               width={600}
               height={600}
-              className="mb-4"
+              className="mb-4 hover:drop-shadow-xl"
               imgixParams={{ ar: "2:1", fit: "crop" }}
             />
             <div>
