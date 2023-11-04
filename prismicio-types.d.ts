@@ -69,7 +69,7 @@ export type BlogpostDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice = PostPreviewsSlice | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -280,6 +280,126 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *PostPreviews → Primary*
+ */
+export interface PostPreviewsSliceDefaultPrimary {
+  /**
+   * Heading field in *PostPreviews → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_previews.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+}
+
+/**
+ * Primary content in *PostPreviews → Items*
+ */
+export interface PostPreviewsSliceDefaultItem {
+  /**
+   * Image field in *PostPreviews → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_previews.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Post link field in *PostPreviews → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_previews.items[].linktopost
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linktopost: prismic.LinkField;
+
+  /**
+   * Title link field in *PostPreviews → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_previews.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Date field in *PostPreviews → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_previews.items[].date
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  date: prismic.RichTextField;
+
+  /**
+   * Description field in *PostPreviews → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_previews.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Author Image field in *PostPreviews → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_previews.items[].author_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  author_image: prismic.ImageField<never>;
+
+  /**
+   * Author Name field in *PostPreviews → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_previews.items[].author_name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  author_name: prismic.RichTextField;
+}
+
+/**
+ * Default variation for PostPreviews Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PostPreviewsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PostPreviewsSliceDefaultPrimary>,
+  Simplify<PostPreviewsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *PostPreviews*
+ */
+type PostPreviewsSliceVariation = PostPreviewsSliceDefault;
+
+/**
+ * PostPreviews Shared Slice
+ *
+ * - **API ID**: `post_previews`
+ * - **Description**: PostPreviews
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PostPreviewsSlice = prismic.SharedSlice<
+  "post_previews",
+  PostPreviewsSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -304,6 +424,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      PostPreviewsSlice,
+      PostPreviewsSliceDefaultPrimary,
+      PostPreviewsSliceDefaultItem,
+      PostPreviewsSliceVariation,
+      PostPreviewsSliceDefault,
     };
   }
 }

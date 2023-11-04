@@ -36,6 +36,7 @@ export default function RootLayout({
     <html lang="en" className={clsx(nunito.variable, nunitoSans.variable)}>
       <body>
         {children}
+        <div className="fixed bg-gray-50 inset-0 z-[-1]" />
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>

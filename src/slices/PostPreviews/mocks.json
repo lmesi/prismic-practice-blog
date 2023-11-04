@@ -1,0 +1,252 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "More stories",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+								"width": 3456,
+								"height": 3456
+							},
+							"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+							"width": 3456,
+							"height": 3456,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"linktopost",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "The title of the post"
+						}
+					],
+					[
+						"date",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "April 9, 2020",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Excepteur incididunt mollit exercitation. Fugiat commodo sunt non sit elit veniam consectetur enim esse in dolor non. Exercitation elit elit occaecat nostrud veniam consectetur aute."
+									}
+								}
+							]
+						}
+					],
+					[
+						"author_image",
+						{
+							"origin": {
+								"id": "rDEOVtE7vOs",
+								"url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw4fHxhdmF0YXJ8ZW58MHx8fHwxNjk5MTA5OTQzfDA&ixlib=rb-4.0.3&q=85",
+								"width": 5184,
+								"height": 3456
+							},
+							"url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw4fHxhdmF0YXJ8ZW58MHx8fHwxNjk5MTA5OTQzfDA&ixlib=rb-4.0.3&q=85",
+							"width": 5184,
+							"height": 3456,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"author_name",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Excepteur minim",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"__TYPE__": "ImageContent",
+							"url": "https://images.unsplash.com/photo-1696446700384-c58cba714c1c?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MXwxfHNlYXJjaHwxNXx8ZnJ1aXR8ZW58MHx8fHwxNjk5MTAyNTQ1fDA&ixlib=rb-4.0.3&q=85",
+							"origin": {
+								"id": "Wj5LHs0Fpsc",
+								"url": "https://images.unsplash.com/photo-1696446700384-c58cba714c1c?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MXwxfHNlYXJjaHwxNXx8ZnJ1aXR8ZW58MHx8fHwxNjk5MTAyNTQ1fDA&ixlib=rb-4.0.3&q=85",
+								"width": 6048,
+								"height": 4024
+							},
+							"width": 6048,
+							"height": 4024,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"thumbnails": {}
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "The title of the other post let it be long"
+						}
+					],
+					[
+						"date",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "November 4, 2023",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Excepteur incididunt mollit exercitation. Fugiat commodo sunt non sit elit veniam consectetur enim esse in dolor non. Exercitation elit elit occaecat nostrud veniam consectetur aute.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"author_image",
+						{
+							"__TYPE__": "ImageContent",
+							"url": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxhdmF0YXJ8ZW58MHx8fHwxNjk5MTA5OTQzfDA&ixlib=rb-4.0.3&q=85",
+							"origin": {
+								"id": "IF9TK5Uy-KI",
+								"url": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxhdmF0YXJ8ZW58MHx8fHwxNjk5MTA5OTQzfDA&ixlib=rb-4.0.3&q=85",
+								"width": 3974,
+								"height": 5000
+							},
+							"width": 3974,
+							"height": 5000,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"thumbnails": {}
+						}
+					],
+					[
+						"author_name",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "First Middle Last",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]
