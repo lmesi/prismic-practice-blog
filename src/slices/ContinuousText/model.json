@@ -1,0 +1,28 @@
+{
+  "id": "continuous_text",
+  "type": "SharedSlice",
+  "name": "ContinuousText",
+  "description": "ContinuousText",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "text_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,list-item,o-list-item"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -13,7 +13,16 @@ export default async function Page({ params }: { params: Params }) {
     .getByUID("blogpost", params.uid)
     .catch(() => notFound());
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return (
+    <SliceZone
+      slices={page.data.slices}
+      components={components}
+      context={{
+        createdAt: page.first_publication_date,
+        updatedAt: page.last_publication_date,
+      }}
+    />
+  );
 }
 
 export async function generateMetadata({

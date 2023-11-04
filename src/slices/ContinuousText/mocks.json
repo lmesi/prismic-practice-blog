@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Officia ex enim do ullamco. Do ipsum veniam ullamco deserunt duis do."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

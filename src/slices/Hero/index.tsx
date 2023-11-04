@@ -33,7 +33,7 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 /**
  * Component for "Hero" Slices.
  */
-const Hero = ({ slice }: HeroProps): JSX.Element => {
+const Hero = ({ slice, context }: HeroProps): JSX.Element => {
   return (
     <Bounded
       data-slice-type={slice.slice_type}
@@ -76,10 +76,16 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                 components={components}
               />
             </div>
-            <PrismicRichText
-              field={slice.primary.date}
-              components={components}
-            />
+            <p
+              className={`text-2xl font-normal leading-10 font-body \
+                text-slate-600 max-w-2xl`}
+            >
+              {new Intl.DateTimeFormat("en-GB", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              }).format(new Date(context?.createdAt))}
+            </p>
           </div>
           <PrismicNextImage
             field={slice.primary.image}

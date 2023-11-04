@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type BlogpostDocumentDataSlicesSlice = HeroSlice;
+type BlogpostDocumentDataSlicesSlice = ContinuousTextSlice | HeroSlice;
 
 /**
  * Content for BlogPost documents
@@ -217,6 +217,51 @@ export type AllDocumentTypes =
   | BlogpostDocument
   | HomepageDocument
   | SettingsDocument;
+
+/**
+ * Primary content in *ContinuousText → Primary*
+ */
+export interface ContinuousTextSliceDefaultPrimary {
+  /**
+   * Text Content field in *ContinuousText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: continuous_text.primary.text_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ContinuousText Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContinuousTextSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContinuousTextSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContinuousText*
+ */
+type ContinuousTextSliceVariation = ContinuousTextSliceDefault;
+
+/**
+ * ContinuousText Shared Slice
+ *
+ * - **API ID**: `continuous_text`
+ * - **Description**: ContinuousText
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContinuousTextSlice = prismic.SharedSlice<
+  "continuous_text",
+  ContinuousTextSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Primary*
@@ -488,6 +533,10 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
+      ContinuousTextSlice,
+      ContinuousTextSliceDefaultPrimary,
+      ContinuousTextSliceVariation,
+      ContinuousTextSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSlicePostHeroPrimary,
