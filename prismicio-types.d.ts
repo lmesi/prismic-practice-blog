@@ -134,6 +134,67 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type PostsDocumentDataSlicesSlice = AllPostsSlice | HeroSlice;
+
+/**
+ * Content for Posts documents
+ */
+interface PostsDocumentData {
+  /**
+   * Slice Zone field in *Posts*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: posts.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PostsDocumentDataSlicesSlice> /**
+   * Meta Title field in *Posts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: posts.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Posts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: posts.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Posts*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: posts.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Posts document from Prismic
+ *
+ * - **API ID**: `posts`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PostsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<PostsDocumentData>, "posts", Lang>;
+
 /**
  * Item in *settings → Navigation*
  */
@@ -216,7 +277,38 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | BlogpostDocument
   | HomepageDocument
+  | PostsDocument
   | SettingsDocument;
+
+/**
+ * Default variation for AllPosts Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AllPostsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *AllPosts*
+ */
+type AllPostsSliceVariation = AllPostsSliceDefault;
+
+/**
+ * AllPosts Shared Slice
+ *
+ * - **API ID**: `all_posts`
+ * - **Description**: AllPosts
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AllPostsSlice = prismic.SharedSlice<
+  "all_posts",
+  AllPostsSliceVariation
+>;
 
 /**
  * Primary content in *ContinuousText → Primary*
@@ -328,12 +420,12 @@ export interface HeroSlicePostHeroPrimary {
   /**
    * Date field in *Hero → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Date
    * - **Placeholder**: *None*
    * - **API ID Path**: hero.primary.date
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#date
    */
-  date: prismic.RichTextField;
+  date: prismic.DateField;
 
   /**
    * Author Image field in *Hero → Primary*
@@ -364,6 +456,26 @@ export interface HeroSlicePostHeroPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Description field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Link To This Page field in *Hero → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.link_to_this_page
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_to_this_page: prismic.LinkField;
 }
 
 /**
@@ -443,16 +555,6 @@ export interface PostPreviewsSliceDefaultItem {
   title: prismic.KeyTextField;
 
   /**
-   * Date field in *PostPreviews → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: post_previews.items[].date
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  date: prismic.RichTextField;
-
-  /**
    * Description field in *PostPreviews → Items*
    *
    * - **Field Type**: Rich Text
@@ -481,6 +583,16 @@ export interface PostPreviewsSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   author_name: prismic.RichTextField;
+
+  /**
+   * Datepicker field in *PostPreviews → Items*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_previews.items[].datepicker
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  datepicker: prismic.DateField;
 }
 
 /**
@@ -529,10 +641,16 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      PostsDocument,
+      PostsDocumentData,
+      PostsDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
+      AllPostsSlice,
+      AllPostsSliceVariation,
+      AllPostsSliceDefault,
       ContinuousTextSlice,
       ContinuousTextSliceDefaultPrimary,
       ContinuousTextSliceVariation,
