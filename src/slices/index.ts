@@ -6,5 +6,6 @@ export const components = {
   all_posts: dynamic(() => import("./AllPosts")),
   continuous_text: dynamic(() => import("./ContinuousText")),
   hero: dynamic(() => import("./Hero")),
+  latest_posts: dynamic(() => import("./LatestPosts")),
   post_previews: dynamic(() => import("./PostPreviews")),
 };

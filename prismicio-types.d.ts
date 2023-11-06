@@ -69,7 +69,10 @@ export type BlogpostDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomepageDocumentDataSlicesSlice = PostPreviewsSlice | HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | LatestPostsSlice
+  | PostPreviewsSlice
+  | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -506,6 +509,51 @@ type HeroSliceVariation = HeroSliceDefault | HeroSlicePostHero;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *LatestPosts → Primary*
+ */
+export interface LatestPostsSliceDefaultPrimary {
+  /**
+   * Heading field in *LatestPosts → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: latest_posts.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+}
+
+/**
+ * Default variation for LatestPosts Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LatestPostsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LatestPostsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *LatestPosts*
+ */
+type LatestPostsSliceVariation = LatestPostsSliceDefault;
+
+/**
+ * LatestPosts Shared Slice
+ *
+ * - **API ID**: `latest_posts`
+ * - **Description**: LatestPosts
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LatestPostsSlice = prismic.SharedSlice<
+  "latest_posts",
+  LatestPostsSliceVariation
+>;
+
+/**
  * Primary content in *PostPreviews → Primary*
  */
 export interface PostPreviewsSliceDefaultPrimary {
@@ -661,6 +709,10 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSlicePostHero,
+      LatestPostsSlice,
+      LatestPostsSliceDefaultPrimary,
+      LatestPostsSliceVariation,
+      LatestPostsSliceDefault,
       PostPreviewsSlice,
       PostPreviewsSliceDefaultPrimary,
       PostPreviewsSliceDefaultItem,
