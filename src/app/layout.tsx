@@ -4,6 +4,7 @@ import clsx from "clsx";
 import "./globals.css";
 import { createClient, repositoryName } from "@/prismicio";
 import { PrismicPreview } from "@prismicio/next";
+import Header from "@/components/Header";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={clsx(nunito.variable, nunitoSans.variable)}>
       <body>
+        <Header />
         {children}
         <div className="fixed bg-gray-50 inset-0 z-[-1]" />
         <PrismicPreview repositoryName={repositoryName} />
