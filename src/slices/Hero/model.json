@@ -59,12 +59,10 @@
           }
         },
         "date": {
-          "type": "StructuredText",
+          "type": "Date",
           "config": {
             "label": "Date",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,strong,em"
+            "placeholder": ""
           }
         },
         "author_image": {
@@ -90,6 +88,23 @@
             "label": "Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em"
+          }
+        },
+        "link_to_this_page": {
+          "type": "Link",
+          "config": {
+            "label": "Link To This Page",
+            "placeholder": "",
+            "select": null
           }
         }
       },

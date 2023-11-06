@@ -47,15 +47,6 @@
             "placeholder": ""
           }
         },
-        "date": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Date",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,strong,em"
-          }
-        },
         "description": {
           "type": "StructuredText",
           "config": {
@@ -80,6 +71,13 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,strong,em"
+          }
+        },
+        "datepicker": {
+          "type": "Date",
+          "config": {
+            "label": "Datepicker",
+            "placeholder": ""
           }
         }
       }

@@ -94,17 +94,9 @@
 				"thumbnails": {}
 			},
 			"date": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "December 15, 2023",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
+				"__TYPE__": "FieldContent",
+				"type": "Date",
+				"value": "2020-12-27"
 			},
 			"author_image": {
 				"origin": {
@@ -125,6 +117,7 @@
 					}
 				},
 				"credits": null,
+				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
@@ -140,6 +133,24 @@
 						"direction": "ltr"
 					}
 				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Esse elit consequat ullamco elit consectetur eu ex eiusmod laborum ad voluptate. Fugiat ex esse sit in cillum et adipisicing magna proident aliqua proident culpa officia. Eiusmod commodo quis quis elit aliquip labore amet adipisicing ex."
+						}
+					}
+				]
+			},
+			"link_to_this_page": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
 			}
 		},
 		"items": [

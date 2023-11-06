@@ -41,7 +41,7 @@ const PostPreviews = ({ slice }: PostPreviewsProps): JSX.Element => {
         {slice.items.map((item, index) => (
           <div
             key={index}
-            className="grid grid-cols-1 justify-items-center md:justify-items-start"
+            className="flex flex-col w-auto justify-items-center md:justify-items-start"
           >
             <PrismicNextImage
               field={item.image}
@@ -57,7 +57,9 @@ const PostPreviews = ({ slice }: PostPreviewsProps): JSX.Element => {
               >
                 {item.title}
               </PrismicNextLink>
-              <PrismicRichText field={item.date} components={components} />
+              <p className="text-base font-medium font-body text-slate-600 text-justify mb-4">
+                {item.datepicker}
+              </p>
               <PrismicRichText
                 field={item.description}
                 components={components}

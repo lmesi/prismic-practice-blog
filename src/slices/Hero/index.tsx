@@ -25,10 +25,15 @@ const components: JSXMapSerializer = {
   ),
 };
 
+type Context = {
+  createdAt: string;
+  updatedAt: string;
+};
+
 /**
  * Props for `Hero`.
  */
-export type HeroProps = SliceComponentProps<Content.HeroSlice>;
+export type HeroProps = SliceComponentProps<Content.HeroSlice, Context>;
 
 /**
  * Component for "Hero" Slices.
@@ -84,7 +89,7 @@ const Hero = ({ slice, context }: HeroProps): JSX.Element => {
                 day: "numeric",
                 month: "short",
                 year: "numeric",
-              }).format(new Date(context?.createdAt))}
+              }).format(new Date(context.createdAt))}
             </p>
           </div>
           <PrismicNextImage
