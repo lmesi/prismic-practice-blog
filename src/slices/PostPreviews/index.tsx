@@ -16,7 +16,7 @@ const components: JSXMapSerializer = {
     </Heading>
   ),
   paragraph: ({ children }) => (
-    <p className="text-base font-medium font-body text-slate-600 text-justify mb-4">
+    <p className="text-base font-medium font-body text-secondary text-justify mb-4">
       {children}
     </p>
   ),
@@ -53,11 +53,11 @@ const PostPreviews = ({ slice }: PostPreviewsProps): JSX.Element => {
             <div>
               <PrismicNextLink
                 field={item.linktopost}
-                className="font-bold leading-tight tracking-tight font-display text-slate-700 text-2xl md:text-3xl hover:underline decoration-solid"
+                className="font-bold leading-tight tracking-tight font-display text-primary text-2xl md:text-3xl hover:underline decoration-solid"
               >
                 {item.title}
               </PrismicNextLink>
-              <p className="text-base font-medium font-body text-slate-600 text-justify mb-4">
+              <p className="text-base font-medium font-body text-secondary text-justify mb-4">
                 {item.datepicker}
               </p>
               <PrismicRichText

@@ -11,7 +11,7 @@ const components: JSXMapSerializer = {
     </Heading>
   ),
   paragraph: ({ children }) => (
-    <p className="text-base font-medium font-body text-slate-600 text-justify mb-4">
+    <p className="text-base font-medium font-body text-secondary text-justify mb-4">
       {children}
     </p>
   ),
@@ -34,11 +34,11 @@ const PostPreviewCard: FC<TPostPreviewCardProps> = ({ data }) => {
       <div>
         <PrismicNextLink
           field={data.link_to_this_page}
-          className="font-bold leading-tight tracking-tight font-display text-slate-700 text-2xl md:text-3xl hover:underline decoration-solid"
+          className="font-bold leading-tight tracking-tight font-display text-primary text-2xl md:text-3xl hover:underline decoration-solid"
         >
           <PrismicRichText field={data.heading} />
         </PrismicNextLink>
-        <p className="text-base font-medium font-body text-slate-600 text-justify mb-4">
+        <p className="text-base font-medium font-body text-secondary text-justify mb-4">
           {data.date}
         </p>
         <PrismicRichText field={data.description} components={components} />

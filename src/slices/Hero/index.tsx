@@ -18,7 +18,7 @@ const components: JSXMapSerializer = {
   paragraph: ({ children }) => (
     <p
       className={`text-2xl font-normal leading-10 font-body \
-                text-slate-600 max-w-2xl text-center`}
+      text-secondary max-w-2xl text-center`}
     >
       {children}
     </p>
@@ -83,7 +83,7 @@ const Hero = ({ slice, context }: HeroProps): JSX.Element => {
             </div>
             <p
               className={`text-2xl font-normal leading-10 font-body \
-                text-slate-600 max-w-2xl`}
+              text-secondary max-w-2xl`}
             >
               {new Intl.DateTimeFormat("en-GB", {
                 day: "numeric",

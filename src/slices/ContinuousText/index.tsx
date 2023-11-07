@@ -9,19 +9,19 @@ import Bounded from "@/components/Bounded";
 
 const components: JSXMapSerializer = {
   paragraph: ({ children }) => (
-    <p className="text-base font-medium font-body text-slate-600 mb-4">
+    <p className="text-base font-medium font-body text-secondary mb-4">
       {children}
     </p>
   ),
   list: ({ children }) => <ul className="p-4">{children}</ul>,
   oList: ({ children }) => <ol className="p-4">{children}</ol>,
   listItem: ({ children }) => (
-    <li className="list-disc pl-5 text-base font-medium font-body text-slate-600">
+    <li className="list-disc pl-5 text-base font-medium font-body text-secondary">
       {children}
     </li>
   ),
   oListItem: ({ children }) => (
-    <li className="list-decimal pl-5 text-base font-medium font-body text-slate-600">
+    <li className="list-decimal pl-5 text-base font-medium font-body text-secondary">
       {children}
     </li>
   ),
