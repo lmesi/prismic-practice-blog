@@ -8,4 +8,5 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   latest_posts: dynamic(() => import("./LatestPosts")),
   post_previews: dynamic(() => import("./PostPreviews")),
+  text_with_image: dynamic(() => import("./TextWithImage")),
 };
