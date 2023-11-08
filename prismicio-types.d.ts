@@ -65,7 +65,10 @@ interface AboutDocumentData {
 export type AboutDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 
-type BlogpostDocumentDataSlicesSlice = ContinuousTextSlice | HeroSlice;
+type BlogpostDocumentDataSlicesSlice =
+  | TextWithImageSlice
+  | ContinuousTextSlice
+  | HeroSlice;
 
 /**
  * Content for BlogPost documents
@@ -832,11 +835,109 @@ export type TextWithImageSliceImageRight = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TextWithImage → Primary*
+ */
+export interface TextWithImageSliceImageLeftPostPrimary {
+  /**
+   * Image field in *TextWithImage → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *TextWithImage → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *TextWithImage → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * imageLeftPost variation for TextWithImage Slice
+ *
+ * - **API ID**: `imageLeftPost`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextWithImageSliceImageLeftPost = prismic.SharedSliceVariation<
+  "imageLeftPost",
+  Simplify<TextWithImageSliceImageLeftPostPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *TextWithImage → Primary*
+ */
+export interface TextWithImageSliceImageRightPostPrimary {
+  /**
+   * Image field in *TextWithImage → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *TextWithImage → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *TextWithImage → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * imageRightPost variation for TextWithImage Slice
+ *
+ * - **API ID**: `imageRightPost`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextWithImageSliceImageRightPost = prismic.SharedSliceVariation<
+  "imageRightPost",
+  Simplify<TextWithImageSliceImageRightPostPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *TextWithImage*
  */
 type TextWithImageSliceVariation =
   | TextWithImageSliceDefault
-  | TextWithImageSliceImageRight;
+  | TextWithImageSliceImageRight
+  | TextWithImageSliceImageLeftPost
+  | TextWithImageSliceImageRightPost;
 
 /**
  * TextWithImage Shared Slice
@@ -901,9 +1002,13 @@ declare module "@prismicio/client" {
       TextWithImageSlice,
       TextWithImageSliceDefaultPrimary,
       TextWithImageSliceImageRightPrimary,
+      TextWithImageSliceImageLeftPostPrimary,
+      TextWithImageSliceImageRightPostPrimary,
       TextWithImageSliceVariation,
       TextWithImageSliceDefault,
       TextWithImageSliceImageRight,
+      TextWithImageSliceImageLeftPost,
+      TextWithImageSliceImageRightPost,
     };
   }
 }
