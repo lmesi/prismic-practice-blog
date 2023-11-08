@@ -4,7 +4,7 @@ import { PrismicNextLink } from "@prismicio/next";
 import ThemeToggle from "./ThemeToggle";
 import { Suspense } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun } from "@fortawesome/free-regular-svg-icons";
+import { faSun } from "@fortawesome/free-solid-svg-icons";
 
 export default async function Header() {
   const client = createClient();
