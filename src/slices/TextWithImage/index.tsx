@@ -46,19 +46,15 @@ const TextWithImage = ({ slice }: TextWithImageProps): JSX.Element => {
       <div className={isDefault ? "" : "max-w-7xl"}>
         <div
           className={clsx(
-            "grid gap-8 md:grid-cols-2",
-            isDefault
-              ? "place-items-center"
-              : "place-items-center md:justify-between md:items-center"
+            "grid gap-8 md:grid-cols-2 place-items-center",
+            !isDefault && "md:justify-between md:items-center"
           )}
         >
           <PrismicNextImage
             field={slice.primary.image}
             className={clsx(
               "rounded-lg max-w-xs sm:max-w-sm lg:max-w-lg",
-              (slice.variation === "imageRight" ||
-                slice.variation === "imageRightPost") &&
-                "md:order-2"
+              slice.variation.includes("imageRight") && "md:order-2"
             )}
           />
           <div
