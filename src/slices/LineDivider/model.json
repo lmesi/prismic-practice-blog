@@ -1,0 +1,26 @@
+{
+  "id": "line_divider",
+  "type": "SharedSlice",
+  "name": "LineDivider",
+  "description": "LineDivider",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "line_thickness": {
+          "type": "Number",
+          "config": {
+            "label": "Line Thickness",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

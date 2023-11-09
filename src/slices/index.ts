@@ -7,6 +7,7 @@ export const components = {
   continuous_text: dynamic(() => import("./ContinuousText")),
   hero: dynamic(() => import("./Hero")),
   latest_posts: dynamic(() => import("./LatestPosts")),
+  line_divider: dynamic(() => import("./LineDivider")),
   post_previews: dynamic(() => import("./PostPreviews")),
   text_with_image: dynamic(() => import("./TextWithImage")),
 };

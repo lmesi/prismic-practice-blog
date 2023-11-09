@@ -66,6 +66,7 @@ export type AboutDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 
 type BlogpostDocumentDataSlicesSlice =
+  | LineDividerSlice
   | TextWithImageSlice
   | ContinuousTextSlice
   | HeroSlice;
@@ -619,6 +620,51 @@ export type LatestPostsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *LineDivider → Primary*
+ */
+export interface LineDividerSliceDefaultPrimary {
+  /**
+   * Line Thickness field in *LineDivider → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: line_divider.primary.line_thickness
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  line_thickness: prismic.NumberField;
+}
+
+/**
+ * Default variation for LineDivider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LineDividerSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LineDividerSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *LineDivider*
+ */
+type LineDividerSliceVariation = LineDividerSliceDefault;
+
+/**
+ * LineDivider Shared Slice
+ *
+ * - **API ID**: `line_divider`
+ * - **Description**: LineDivider
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LineDividerSlice = prismic.SharedSlice<
+  "line_divider",
+  LineDividerSliceVariation
+>;
+
+/**
  * Primary content in *PostPreviews → Primary*
  */
 export interface PostPreviewsSliceDefaultPrimary {
@@ -994,6 +1040,10 @@ declare module "@prismicio/client" {
       LatestPostsSliceDefaultPrimary,
       LatestPostsSliceVariation,
       LatestPostsSliceDefault,
+      LineDividerSlice,
+      LineDividerSliceDefaultPrimary,
+      LineDividerSliceVariation,
+      LineDividerSliceDefault,
       PostPreviewsSlice,
       PostPreviewsSliceDefaultPrimary,
       PostPreviewsSliceDefaultItem,

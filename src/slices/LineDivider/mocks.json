@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"line_thickness": {
+				"__TYPE__": "FieldContent",
+				"value": "62",
+				"type": "Number"
+			}
+		},
+		"items": []
+	}
+]
