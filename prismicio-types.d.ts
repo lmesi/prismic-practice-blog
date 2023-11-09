@@ -66,6 +66,7 @@ export type AboutDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 
 type BlogpostDocumentDataSlicesSlice =
+  | GallerySlice
   | TextInColumnsSlice
   | SpaceBetweenSlice
   | LineDividerSlice
