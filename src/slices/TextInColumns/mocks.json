@@ -1,0 +1,76 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"column1": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aute tempor aliqua culpa tempor officia. Et consequat eiusmod proident laborum Lorem anim ut esse laboris magna quis cillum aliquip commodo. Tempor non aute amet do ad nostrud tempor excepteur nulla Lorem aute quis deserunt."
+						}
+					}
+				]
+			},
+			"column2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim sunt excepteur Lorem minim dolor occaecat irure id est velit fugiat incididunt non veniam."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "3Colums",
+		"primary": {
+			"column1": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod ipsum culpa incididunt do dolor ipsum aliqua. Excepteur excepteur eiusmod eiusmod."
+						}
+					}
+				]
+			},
+			"column2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Irure excepteur ea ipsum aliqua exercitation. Do esse laboris pariatur culpa id ex tempor sunt pariatur irure eu et quis aliqua et. Dolor cupidatat aliquip eu officia labore esse laborum eiusmod officia Lorem nulla voluptate proident."
+						}
+					}
+				]
+			},
+			"column3": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Laborum consectetur magna veniam sint ad consectetur sint eu occaecat laborum ullamco minim Lorem. Sit labore qui fugiat qui magna ut est irure."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

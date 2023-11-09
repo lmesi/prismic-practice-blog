@@ -66,6 +66,7 @@ export type AboutDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 
 type BlogpostDocumentDataSlicesSlice =
+  | TextInColumnsSlice
   | SpaceBetweenSlice
   | LineDividerSlice
   | TextWithImageSlice
@@ -423,6 +424,51 @@ type ContinuousTextSliceVariation = ContinuousTextSliceDefault;
 export type ContinuousTextSlice = prismic.SharedSlice<
   "continuous_text",
   ContinuousTextSliceVariation
+>;
+
+/**
+ * Primary content in *Gallery → Items*
+ */
+export interface GallerySliceDefaultItem {
+  /**
+   * Image field in *Gallery → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Gallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GallerySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<GallerySliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Gallery*
+ */
+type GallerySliceVariation = GallerySliceDefault;
+
+/**
+ * Gallery Shared Slice
+ *
+ * - **API ID**: `gallery`
+ * - **Description**: Gallery
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GallerySlice = prismic.SharedSlice<
+  "gallery",
+  GallerySliceVariation
 >;
 
 /**
@@ -831,6 +877,111 @@ export type SpaceBetweenSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *TextInColumns → Primary*
+ */
+export interface TextInColumnsSliceDefaultPrimary {
+  /**
+   * Column1 field in *TextInColumns → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_in_columns.primary.column1
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  column1: prismic.RichTextField;
+
+  /**
+   * Column2 field in *TextInColumns → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_in_columns.primary.column2
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  column2: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TextInColumns Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextInColumnsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextInColumnsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *TextInColumns → Primary*
+ */
+export interface TextInColumnsSlice3ColumsPrimary {
+  /**
+   * Column1 field in *TextInColumns → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_in_columns.primary.column1
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  column1: prismic.RichTextField;
+
+  /**
+   * Column2 field in *TextInColumns → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_in_columns.primary.column2
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  column2: prismic.RichTextField;
+
+  /**
+   * Column3 field in *TextInColumns → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_in_columns.primary.column3
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  column3: prismic.RichTextField;
+}
+
+/**
+ * 3 Colums variation for TextInColumns Slice
+ *
+ * - **API ID**: `3Colums`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextInColumnsSlice3Colums = prismic.SharedSliceVariation<
+  "3Colums",
+  Simplify<TextInColumnsSlice3ColumsPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextInColumns*
+ */
+type TextInColumnsSliceVariation =
+  | TextInColumnsSliceDefault
+  | TextInColumnsSlice3Colums;
+
+/**
+ * TextInColumns Shared Slice
+ *
+ * - **API ID**: `text_in_columns`
+ * - **Description**: TextInColumns
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextInColumnsSlice = prismic.SharedSlice<
+  "text_in_columns",
+  TextInColumnsSliceVariation
+>;
+
+/**
  * Primary content in *TextWithImage → Primary*
  */
 export interface TextWithImageSliceDefaultPrimary {
@@ -1076,6 +1227,10 @@ declare module "@prismicio/client" {
       ContinuousTextSliceDefaultPrimary,
       ContinuousTextSliceVariation,
       ContinuousTextSliceDefault,
+      GallerySlice,
+      GallerySliceDefaultItem,
+      GallerySliceVariation,
+      GallerySliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSlicePostHeroPrimary,
@@ -1099,6 +1254,12 @@ declare module "@prismicio/client" {
       SpaceBetweenSliceDefaultPrimary,
       SpaceBetweenSliceVariation,
       SpaceBetweenSliceDefault,
+      TextInColumnsSlice,
+      TextInColumnsSliceDefaultPrimary,
+      TextInColumnsSlice3ColumsPrimary,
+      TextInColumnsSliceVariation,
+      TextInColumnsSliceDefault,
+      TextInColumnsSlice3Colums,
       TextWithImageSlice,
       TextWithImageSliceDefaultPrimary,
       TextWithImageSliceImageRightPrimary,

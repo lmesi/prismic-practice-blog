@@ -5,10 +5,12 @@ import dynamic from "next/dynamic";
 export const components = {
   all_posts: dynamic(() => import("./AllPosts")),
   continuous_text: dynamic(() => import("./ContinuousText")),
+  gallery: dynamic(() => import("./Gallery")),
   hero: dynamic(() => import("./Hero")),
   latest_posts: dynamic(() => import("./LatestPosts")),
   line_divider: dynamic(() => import("./LineDivider")),
   post_previews: dynamic(() => import("./PostPreviews")),
   space_between: dynamic(() => import("./SpaceBetween")),
+  text_in_columns: dynamic(() => import("./TextInColumns")),
   text_with_image: dynamic(() => import("./TextWithImage")),
 };
