@@ -66,6 +66,7 @@ export type AboutDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 
 type BlogpostDocumentDataSlicesSlice =
+  | SpaceBetweenSlice
   | LineDividerSlice
   | TextWithImageSlice
   | ContinuousTextSlice
@@ -785,6 +786,51 @@ export type PostPreviewsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *SpaceBetween → Primary*
+ */
+export interface SpaceBetweenSliceDefaultPrimary {
+  /**
+   * Thickness field in *SpaceBetween → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: space_between.primary.thickness
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  thickness: prismic.NumberField;
+}
+
+/**
+ * Default variation for SpaceBetween Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SpaceBetweenSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SpaceBetweenSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SpaceBetween*
+ */
+type SpaceBetweenSliceVariation = SpaceBetweenSliceDefault;
+
+/**
+ * SpaceBetween Shared Slice
+ *
+ * - **API ID**: `space_between`
+ * - **Description**: SpaceBetween
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SpaceBetweenSlice = prismic.SharedSlice<
+  "space_between",
+  SpaceBetweenSliceVariation
+>;
+
+/**
  * Primary content in *TextWithImage → Primary*
  */
 export interface TextWithImageSliceDefaultPrimary {
@@ -1049,6 +1095,10 @@ declare module "@prismicio/client" {
       PostPreviewsSliceDefaultItem,
       PostPreviewsSliceVariation,
       PostPreviewsSliceDefault,
+      SpaceBetweenSlice,
+      SpaceBetweenSliceDefaultPrimary,
+      SpaceBetweenSliceVariation,
+      SpaceBetweenSliceDefault,
       TextWithImageSlice,
       TextWithImageSliceDefaultPrimary,
       TextWithImageSliceImageRightPrimary,

@@ -1,0 +1,26 @@
+{
+  "id": "space_between",
+  "type": "SharedSlice",
+  "name": "SpaceBetween",
+  "description": "SpaceBetween",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "thickness": {
+          "type": "Number",
+          "config": {
+            "label": "Thickness",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

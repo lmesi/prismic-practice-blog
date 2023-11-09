@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "space_between": {
+              "type": "SharedSlice"
+            },
             "line_divider": {
               "type": "SharedSlice"
             },

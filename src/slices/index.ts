@@ -9,5 +9,6 @@ export const components = {
   latest_posts: dynamic(() => import("./LatestPosts")),
   line_divider: dynamic(() => import("./LineDivider")),
   post_previews: dynamic(() => import("./PostPreviews")),
+  space_between: dynamic(() => import("./SpaceBetween")),
   text_with_image: dynamic(() => import("./TextWithImage")),
 };
