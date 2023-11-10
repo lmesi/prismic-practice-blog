@@ -16,14 +16,15 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      variation="post"
       internalClassName="flex flex-row flex-wrap gap-4 justify-center"
     >
       {slice.items.map((item) => (
         <PrismicNextImage
           key={item.image.alt}
           field={item.image}
-          width={600}
-          height={600}
+          width={400}
+          height={400}
           imgixParams={{ ar: "2:1", fit: "crop" }}
         />
       ))}

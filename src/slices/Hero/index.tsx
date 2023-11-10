@@ -58,7 +58,7 @@ const Hero = ({ slice, context }: HeroProps): JSX.Element => {
           </div>
           <PrismicNextImage
             field={slice.primary.image}
-            className="shadow-2xl dark:shadow-yellow-100/30 max-w-5xl"
+            className="shadow-2xl dark:shadow-yellow-100/30 max-w-xs sm:max-w-lg  md:max-w-3xl lg:max-w-5xl"
           />
         </div>
       )}
@@ -94,7 +94,7 @@ const Hero = ({ slice, context }: HeroProps): JSX.Element => {
           </div>
           <PrismicNextImage
             field={slice.primary.image}
-            className="shadow-2xl dark:shadow-yellow-100/30 max-w-5xl"
+            className="shadow-2xl dark:shadow-yellow-100/30 max-w-xs sm:max-w-lg  md:max-w-3xl lg:max-w-5xl"
           />
         </div>
       )}

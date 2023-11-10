@@ -10,7 +10,9 @@ import Link from "next/link";
 
 const components: JSXMapSerializer = {
   paragraph: ({ children }) => (
-    <p className="text-lg font-body text-secondary mb-4">{children}</p>
+    <p className="text-lg font-body text-secondary mb-4 last:mb-0">
+      {children}
+    </p>
   ),
   list: ({ children }) => <ul className="p-4">{children}</ul>,
   oList: ({ children }) => <ol className="p-4">{children}</ol>,
@@ -41,6 +43,18 @@ const components: JSXMapSerializer = {
       </>
     );
   },
+  /* embed: ({ node }) => {
+    console.log(node);
+    return (
+      <div
+        data-oembed={node.oembed.embed_url}
+        data-oembed-type={node.oembed.type}
+        data-oembed-provider={node.oembed.provider_name}
+      >
+        {node.oembed.html}
+      </div>
+    );
+  }, */
 };
 /**
  * Props for `ContinuousText`.

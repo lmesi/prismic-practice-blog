@@ -21,7 +21,7 @@ export default function Bounded({
       className={clsx(
         "px-4 md:px-6 lg:px-8",
         variation === "default" && "py-10 md:py-14 lg:py-16",
-        variation === "post" && "py-2 md:py-6 lg:py-10",
+        variation === "post" && "py-2 md:py-4 lg:py-6",
         className
       )}
       {...restProps}

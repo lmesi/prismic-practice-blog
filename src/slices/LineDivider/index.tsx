@@ -18,7 +18,8 @@ const LineDivider = ({ slice }: LineDividerProps): JSX.Element => {
       variation="post"
     >
       <hr
-        className={`h-[${slice.primary.line_thickness}px] m-8 rounded border-slate-300`}
+        style={{ height: slice.primary.line_thickness + "px" }}
+        className="border-0 m-8 rounded bg-slate-300"
       />
     </Bounded>
   );
